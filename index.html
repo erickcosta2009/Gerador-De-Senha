@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SecurePass é um gerador de senhas moderno, seguro e gratuito."
+    >
+
+    <meta name="theme-color" content="#070b14">
+
+    <title>SecurePass — Gerador de Senhas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="background-grid"></div>
+
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+
+    <!-- HEADER -->
+
+    <header class="navbar">
+
+        <a href="#" class="brand">
+
+            <span class="brand-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3L20 6V11C20 16.2 16.7 20.1 12 21C7.3 20.1 4 16.2 4 11V6L12 3Z"/>
+                    <path d="M9 12L11 14L15 10"/>
+                </svg>
+
+            </span>
+
+            <span>
+                Secure<span>Pass</span>
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#generator">
+                Gerador
+            </a>
+
+            <a href="#security">
+                Segurança
+            </a>
+
+            <a href="#about">
+                Sobre
+            </a>
+
+        </nav>
+
+
+        <button
+            id="themeButton"
+            class="theme-button"
+            aria-label="Alternar tema"
+        >
+
+            <svg viewBox="0 0 24 24">
+
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                />
+
+                <path d="M12 2V4"/>
+                <path d="M12 20V22"/>
+                <path d="M4.93 4.93L6.34 6.34"/>
+                <path d="M17.66 17.66L19.07 19.07"/>
+                <path d="M2 12H4"/>
+                <path d="M20 12H22"/>
+                <path d="M4.93 19.07L6.34 17.66"/>
+                <path d="M17.66 6.34L19.07 4.93"/>
+
+            </svg>
+
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="badge">
+
+                <span class="status-dot"></span>
+
+                Segurança local no seu navegador
+
+            </div>
+
+
+            <h1>
+
+                Senhas fortes.
+                <br>
+
+                <span>Segurança de verdade.</span>
+
+            </h1>
+
+
+            <p>
+
+                Crie senhas únicas, aleatórias e personalizadas
+                em segundos. Seus dados permanecem no seu dispositivo.
+
+            </p>
+
+
+            <a
+                href="#generator"
+                class="hero-button"
+            >
+
+                Criar minha senha
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="M5 12H19"/>
+                    <path d="M13 6L19 12L13 18"/>
+
+                </svg>
+
+            </a>
+
+        </section>
+
+
+        <!-- GENERATOR -->
+
+        <section
+            id="generator"
+            class="generator-section"
+        >
+
+            <div class="generator-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        PASSWORD GENERATOR
+                    </span>
+
+                    <h2>
+                        Crie sua senha
+                    </h2>
+
+                </div>
+
+
+                <div class="secure-badge">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M12 3L20 6V11C20 16.2 16.7 20.1 12 21C7.3 20.1 4 16.2 4 11V6L12 3Z"/>
+
+                        <path d="M9 12L11 14L15 10"/>
+
+                    </svg>
+
+                    100% local
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD OUTPUT -->
+
+            <div class="password-output">
+
+                <div class="password-top">
+
+                    <span>
+                        SUA SENHA
+                    </span>
+
+                    <span
+                        id="strengthText"
+                        class="strength-label"
+                    >
+                        Excelente
+                    </span>
+
+                </div>
+
+
+                <div class="password-row">
+
+                    <div
+                        id="password"
+                        class="password"
+                    >
+                        Gerando senha...
+                    </div>
+
+
+                    <button
+                        id="copyButton"
+                        class="copy-button"
+                        aria-label="Copiar senha"
+                    >
+
+                        <svg viewBox="0 0 24 24">
+
+                            <rect
+                                x="9"
+                                y="9"
+                                width="11"
+                                height="11"
+                                rx="2"
+                            />
+
+                            <path d="M5 15H4C2.9 15 2 14.1 2 13V4C2 2.9 2.9 2 4 2H13C14.1 2 15 2.9 15 4V5"/>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+
+                <div class="strength-area">
+
+                    <div class="strength-track">
+
+                        <div
+                            id="strengthProgress"
+                            class="strength-progress"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="strength-info">
+
+                        <span id="strengthDescription">
+                            Sua senha possui excelente segurança.
+                        </span>
+
+                        <span>
+                            <b id="entropy">0</b> bits
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="controls">
+
+                <!-- LENGTH -->
+
+                <div class="control-column">
+
+                    <div class="control-heading">
+
+                        <div>
+
+                            <h3>
+                                Comprimento
+                            </h3>
+
+                            <p>
+                                Quanto maior, mais segura.
+                            </p>
+
+                        </div>
+
+                        <div class="length-value">
+
+                            <span id="length">
+                                20
+                            </span>
+
+                            <small>
+                                caracteres
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <input
+                        id="lengthRange"
+                        class="range"
+                        type="range"
+                        min="4"
+                        max="64"
+                        value="20"
+                    >
+
+
+                    <div class="range-labels">
+
+                        <span>4</span>
+                        <span>64</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="control-column">
+
+                    <div class="control-heading">
+
+                        <div>
+
+                            <h3>
+                                Caracteres
+                            </h3>
+
+                            <p>
+                                Escolha o que incluir.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="options">
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="uppercase"
+                                checked
+                            >
+
+                            <span class="check"></span>
+
+                            <span>
+                                Maiúsculas
+                            </span>
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="lowercase"
+                                checked
+                            >
+
+                            <span class="check"></span>
+
+                            <span>
+                                Minúsculas
+                            </span>
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="numbers"
+                                checked
+                            >
+
+                            <span class="check"></span>
+
+                            <span>
+                                Números
+                            </span>
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="symbols"
+                                checked
+                            >
+
+                            <span class="check"></span>
+
+                            <span>
+                                Símbolos
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION -->
+
+            <button
+                id="generateButton"
+                class="generate-button"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="M21 12A9 9 0 1 1 18.36 5.64"/>
+                    <path d="M21 3V9H15"/>
+
+                </svg>
+
+                Gerar nova senha
+
+            </button>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section
+            id="security"
+            class="features"
+        >
+
+            <div class="feature">
+
+                <div class="feature-icon blue">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M12 3L20 6V11C20 16.2 16.7 20.1 12 21C7.3 20.1 4 16.2 4 11V6L12 3Z"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Privacidade primeiro
+                </h3>
+
+                <p>
+                    Suas senhas são geradas diretamente
+                    no seu navegador e nunca são enviadas
+                    para servidores.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon purple">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M12 3V21"/>
+                        <path d="M5 8L12 3L19 8"/>
+                        <path d="M5 16L12 21L19 16"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Aleatoriedade segura
+                </h3>
+
+                <p>
+                    Utilizamos a API criptográfica nativa
+                    do navegador para gerar valores aleatórios.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon green">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M5 12L10 17L19 7"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Fácil e rápido
+                </h3>
+
+                <p>
+                    Personalize sua senha, copie com um clique
+                    e use onde precisar.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section
+            id="about"
+            class="privacy-card"
+        >
+
+            <div class="privacy-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="M12 3L20 6V11C20 16.2 16.7 20.1 12 21C7.3 20.1 4 16.2 4 11V6L12 3Z"/>
+
+                    <path d="M9 12L11 14L15 10"/>
+
+                </svg>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Feito pensando na sua privacidade
+                </h3>
+
+                <p>
+                    O SecurePass não possui banco de dados,
+                    não salva suas senhas e não envia informações
+                    para a internet. Tudo acontece localmente
+                    no seu navegador.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <span class="brand-icon small">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="M12 3L20 6V11C20 16.2 16.7 20.1 12 21C7.3 20.1 4 16.2 4 11V6L12 3Z"/>
+
+                </svg>
+
+            </span>
+
+            SecurePass
+
+        </div>
+
+
+        <p>
+            Gerador de senhas seguro e gratuito.
+        </p>
+
+
+        <p>
+            © 2026 SecurePass
+        </p>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+
+        <span class="toast-icon">
+            ✓
+        </span>
+
+        Senha copiada!
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
